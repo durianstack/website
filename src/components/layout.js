@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from './header'
+import Footer from './footer'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
@@ -29,7 +30,8 @@ const Layout = ({ children }) => (
           <html lang="en" />
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <div className="container mx-auto py-8">{children}</div>
+        {children}
+        <Footer />
       </>
     )}
   />
