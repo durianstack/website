@@ -1,0 +1,16 @@
+.art {
+    position: relative;
+    @apply overflow-hidden;
+
+    &:before {
+        @apply bg-teal absolute pin;
+
+        top: 0;
+        left: 0;
+        clear: both;
+        content: "";
+        display: block;
+        border-bottom-left-radius: 1000px;
+        border-bottom-right-radius: 1000px;
+    }
+}

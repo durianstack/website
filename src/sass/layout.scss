@@ -4,7 +4,7 @@
 
 body,
 html {
-  @apply bg-teal font-sans text-black;
+  @apply font-sans text-black;
 }
 
 a.link {
@@ -14,3 +14,5 @@ a.link {
     @apply text-teal-dark;
   }
 }
+
+@import 'art';
