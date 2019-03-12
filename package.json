@@ -13,6 +13,7 @@
     "gatsby-plugin-sass": "^2.0.11",
     "gatsby-plugin-sharp": "^2.0.27",
     "gatsby-source-filesystem": "^2.0.24",
+    "gatsby-transformer-remark": "^2.3.2",
     "gatsby-transformer-sharp": "^2.1.16",
     "node-sass": "^4.10.0",
     "react": "^16.8.4",
@@ -37,6 +38,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/durianstack/gatsby-tailwindcss-sass-starter"
+    "url": "https://github.com/durianstack/website"
   }
 }

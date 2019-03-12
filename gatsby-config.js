@@ -28,6 +28,14 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "blogs",
+        path: `${__dirname}/src/data/blog`,
+      },
+    },
+    'gatsby-transformer-remark',
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: 'Gatsby TailwindCSS + SASS Starter',
