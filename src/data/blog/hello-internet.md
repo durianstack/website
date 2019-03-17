@@ -2,6 +2,7 @@
 path: "/blog/hello-internet"
 date: "2019-13-03"
 title: "Hello Internet"
+tags: origin-story, intro
 ---
 # Hello Internet!
 
