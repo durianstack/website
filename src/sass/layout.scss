@@ -7,7 +7,7 @@ html {
   @apply font-sans text-black;
 }
 
-a.link {
+a {
   @apply no-underline text-teal;
 
   &:hover {
@@ -15,5 +15,18 @@ a.link {
   }
 }
 
+.content {
+  & > * {
+    @apply mb-2;
+
+    &:last-child {
+      @apply mb-0;
+    }
+  }
+
+  
+}
+
 @import 'art';
 @import 'wall';
+@import 'featured';

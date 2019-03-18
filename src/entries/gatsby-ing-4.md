@@ -1,7 +1,8 @@
 ---
-path: "/blog/gatsby-ing-3"
+path: "/entries/gatsby-ing-4"
 date: "2019-17-03"
-title: "Gatsby-ing"
+title: "Kabalo na gud ko sa iyahang basic principles but gusto nako na naa jud koy mabuhat gikan sa iyaha"
+type: "blog"
 ---
 ## Nganung Gatsby?
 

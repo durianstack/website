@@ -1,7 +1,8 @@
 ---
-path: "/blog/gatsby-ing-1"
+path: "/entries/gatsby-ing-2"
 date: "2019-17-03"
 title: "Gatsby-ing"
+type: "blog"
 ---
 ## Nganung Gatsby?
 

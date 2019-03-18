@@ -1,8 +1,10 @@
 ---
-path: "/blog/hello-internet"
+path: "/entries/hello-internet"
 date: "2019-13-03"
 title: "Hello Internet"
-tags: origin-story, intro
+featured: true
+tags: ["origin-story", "intro"]
+type: "blog"
 ---
 # Hello Internet!
 

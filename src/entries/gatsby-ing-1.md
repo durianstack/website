@@ -1,8 +1,8 @@
 ---
-path: "/blog/gatsby-ing"
+path: "/entries/gatsby-ing-1"
 date: "2019-17-03"
 title: "Gatsby-ing"
-tags: gatsby, react, jigsaw, next, nuxt, hooks, durian-stack
+type: "blog"
 ---
 ## Nganung Gatsby?
 

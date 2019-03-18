@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import WallTags from '../components/wallTags'
+import ImagePlaceholder from '../components/imagePlaceholder'
 
 const Wall = ({ edges }) => {
 
@@ -13,31 +15,33 @@ const Wall = ({ edges }) => {
     if (column === limit) column = 0
   })
 
-  const wall = rows.map(columns => {
+  const wall = rows.map((columns, index) => {
     const post = columns.map(node => {
-      const { id, excerpt, frontmatter: { path, title } } = node
-      return <div key={id} className="max-w-sm overflow-hidden shadow-md mb-2">
-        {/* <img class="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains" /> */}
-        <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">
-            <Link to={path}>
-              {title}
-            </Link>
-          </div>
-          <p class="text-grey-darker text-base">{excerpt}</p>
-        </div>
-        <div class="px-6 py-4">
-          <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#photography</span>
-          <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#travel</span>
-          <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">#winter</span>
+      const { id, html, frontmatter: { path, title, tags, type, thumbnail, url } } = node
+
+      return <div className="max-w-sm overflow-hidden shadow-md mb-4" key={id}>
+        {type === 'blog' ? (<>
+          <ImagePlaceholder />
+          <h2 className="font-bold text-xxl p-2 mb-2">
+            <Link to={path}>{title}</Link>
+          </h2>
+        </>) : (<>
+          {thumbnail !== null && <img src={thumbnail} alt={title} />}
+          <h2 className="font-bold text-xxl p-2 mb-2">
+            <a href={url}>{title}</a>
+          </h2>
+          <div className="content p-2" dangerouslySetInnerHTML={({__html: html})}></div>
+        </>)}
+        <div className="px-6 py-4">
+          <WallTags tags={tags} />
         </div>
       </div>
     })
-    return <div class="wall-column flex flex-col">{post}</div>
+
+    return <div className="wall-column flex flex-col" key={index}>{post}</div>
   })
 
-
-  return <div class="wall flex">{wall}</div>
+  return <div className="wall flex">{wall}</div>
 }
 
 export default Wall
