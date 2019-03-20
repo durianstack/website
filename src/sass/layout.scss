@@ -24,9 +24,12 @@ a {
     }
   }
 
-  
+  pre {
+    @apply p-2 font-mono bg-grey-lighter rounded-sm;
+  }
 }
 
 @import 'art';
 @import 'wall';
+@import 'card';
 @import 'featured';

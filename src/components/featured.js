@@ -3,6 +3,8 @@ import ImagePlaceholder from '../components/imagePlaceholder'
 
 const Featured = ({ edges }) => {
 
+  console.log(edges.length);
+
   return <div className="featured">
     <div className="w-3/4 mr-4">
       <ImagePlaceholder />

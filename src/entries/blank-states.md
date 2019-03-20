@@ -3,6 +3,7 @@ path: "/entries/blank-states"
 date: "2018-03-11"
 title: "Twitter Tip #1"
 type: "tip"
+tags: ["tip", "twitter", "design", "ui"]
 thumbnail: "https://pbs.twimg.com/media/DrAwB-DWkAEoz_g?format=png&name=4096x4096"
 url: "https://twitter.com/steveschoger/status/1058398981888376832?s=20"
 ---

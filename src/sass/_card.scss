@@ -1,0 +1,13 @@
+.card {
+  @apply shadow-md mb-4;
+
+  h2 {
+    @apply font-bold text-2xl py-2 px-4 mb-2;
+  }
+
+  & > * {
+    &:last-child {
+      @apply pb-6;
+    }
+  }
+}
