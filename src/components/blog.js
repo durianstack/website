@@ -6,18 +6,21 @@ import ImagePlaceholder from '../components/imagePlaceholder'
 const Blog = ({ node, children }) => {
   const { excerpt, frontmatter: { path, title } } = node
 
-  return <Card>
-    <ImagePlaceholder />
-    <h2>
-      <Link to={path}>{title}</Link>
-    </h2>
+  return (
+    <Card>
+      <ImagePlaceholder />
 
-    <div className="content py-2 px-4">
-      <p>{excerpt}</p>
-    </div>
-    
-    {children}
-  </Card>
+      <h2>
+        <Link to={path}>{title}</Link>
+      </h2>
+
+      <div className="content">
+        <p>{excerpt}</p>
+      </div>
+      
+      {children}
+    </Card>
+  )
 }
 
 export default Blog

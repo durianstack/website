@@ -1,19 +1,22 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Wall from '../components/wall'
+import Bricks from '../components/bricks'
 import Layout from '../components/layout'
 import Featured from '../components/featured'
 
-const IndexPage = ({ data: { allMarkdownRemark: { edges } } }) => {
+const IndexPage = (props) => {
+  const { pageContext, data: { allMarkdownRemark: { edges } } } = props
   const featured = edges.filter(edge => edge.node.frontmatter.featured)
   const list = edges.filter(edge => edge.node.frontmatter.featured === null)
 
-  return <Layout>
-    <div className="mx-auto container my-4">
-      <Featured edges={featured} />
-      <Wall edges={list} />
-    </div>
-  </Layout>
+  console.log(pageContext);
+
+  return (
+    <Layout>
+      {/* <Featured edges={featured} /> */}
+      <Bricks edges={list} />
+    </Layout>
+  )
 }
 
 export default IndexPage

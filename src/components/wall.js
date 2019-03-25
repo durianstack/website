@@ -21,16 +21,26 @@ const Wall = ({ edges }) => {
       const { id, frontmatter: { tags, type } } = node
       const EntryType = type === 'blog' ? Blog : Tip
 
-      return <EntryType node={node} key={id}>
-        <Tags items={tags} />
-      </EntryType>
+      return (
+        <EntryType node={node} key={id}>
+          <Tags items={tags} />
+        </EntryType>
+      )
     })
     const columnWidth = limit > 1 ? `1/${limit}` : 'full'
 
-    return <div className={`wall-column w-${columnWidth}`} key={index}>{post}</div>
+    return (
+      <div className={`wall-column w-${columnWidth}`} key={index}>
+        {post}
+      </div>
+    )
   })
 
-  return <div className="wall flex">{wall}</div>
+  return (
+    <div className="wall flex">
+      {wall}
+    </div>
+  )
 }
 
 export default Wall
