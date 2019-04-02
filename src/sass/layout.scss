@@ -15,20 +15,7 @@ a {
   }
 }
 
-.content {
-  & > * {
-    @apply mb-2;
-
-    &:last-child {
-      @apply mb-0;
-    }
-  }
-
-  pre {
-    @apply p-2 font-mono bg-grey-lighter rounded-sm;
-  }
-}
-
+@import 'content';
 @import 'art';
 @import 'wall';
 @import 'card';

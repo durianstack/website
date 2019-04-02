@@ -1,0 +1,13 @@
+.content {
+    & > * {
+      @apply mb-2 leading-normal;
+
+      &:last-child {
+        @apply mb-0;
+      }
+    }
+
+    pre {
+      @apply text-xs p-2 font-mono bg-grey-lighter rounded-sm max-w-full overflow-auto;
+    }
+  }

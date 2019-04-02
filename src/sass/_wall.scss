@@ -1,9 +1,18 @@
-.wall {
+@mixin wall-column {
   .wall-column {
     @apply mr-4;
-    
+
     &:last-child {
       @apply mr-0;
     }
   }
+}
+.wall {
+  @apply flex;
+  @include wall-column;
+}
+
+.wall-prerendered {
+  @apply flex flex-wrap;
+  @include wall-column;
 }

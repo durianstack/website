@@ -1,6 +1,9 @@
 dev:
-	npm run develop
+	yarn develop
 pretty:
-	npm run format
+	yarn format
 build:
-	npm run build
+	yarn build
+build_serve:
+	yarn build
+	serve public/

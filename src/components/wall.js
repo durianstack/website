@@ -1,43 +1,37 @@
 import React from 'react'
-import Tags from './tags'
-import Tip from '../components/tip'
-import Blog from '../components/blog'
+import Brick from './brick'
 import useColumnLimit from './useColumnLimit';
 
 const Wall = ({ edges }) => {
+  let wall = []
+  const isPreRendered = typeof window === 'undefined'
 
-  let column = 0
-  let limit = useColumnLimit()
-  let rows = Array.from({length: limit}, () => [])
-  
-  edges.forEach(({ node }) => {
-    rows[column].push(node)
-    column++
-    if (column === limit) column = 0
-  })
+  if (isPreRendered) {
+    wall = edges.map(({ node}) => (<Brick node={node} key={node.id} />))
+  } else {
+    let column = 0
+    let limit = useColumnLimit()
+    let rows = Array.from({length: limit}, () => [])
 
-  const wall = rows.map((columns, index) => {
-    const post = columns.map(node => {
-      const { id, frontmatter: { tags, type } } = node
-      const EntryType = type === 'blog' ? Blog : Tip
+    edges.forEach(({ node }) => {
+      rows[column].push(node)
+      column++
+      if (column === limit) column = 0
+    })
+
+    wall = rows.map((columns, index) => {
+      const bricks = columns.map(node => (<Brick node={node} key={node.id} />))
 
       return (
-        <EntryType node={node} key={id}>
-          <Tags items={tags} />
-        </EntryType>
+        <div className={`wall-column w-${limit > 1 ? `1/${limit}` : 'full'}`} key={index}>
+          {bricks}
+        </div>
       )
     })
-    const columnWidth = limit > 1 ? `1/${limit}` : 'full'
-
-    return (
-      <div className={`wall-column w-${columnWidth}`} key={index}>
-        {post}
-      </div>
-    )
-  })
+  }
 
   return (
-    <div className="wall flex">
+    <div className={`wall ${isPreRendered ? 'is-prerendered' : ''}`}>
       {wall}
     </div>
   )

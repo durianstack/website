@@ -6,12 +6,19 @@ const Tip = ({ node, children }) => {
 
   return (
     <Card>
-      {thumbnail !== null && <img src={thumbnail} className="w-full" alt={title} />}
-      <h2>
-        <a href={url}>{title}</a>
-      </h2>
-      <div className="content" dangerouslySetInnerHTML={({__html: html})} />
-      {children}
+      {thumbnail !== null && (
+        <div className="card-head">
+          <img src={thumbnail} className="w-full" alt={title} />
+        </div>
+      )}
+
+      <div className="card-content">
+        <h2>
+          <a href={url}>{title}</a>
+        </h2>
+        <div className="content" dangerouslySetInnerHTML={({__html: html})} />
+        {children}
+      </div>
     </Card>
   )
 }

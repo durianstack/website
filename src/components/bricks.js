@@ -5,23 +5,23 @@ import Blog from '../components/blog'
 
 const Bricks = ({ edges }) => {
 
-  const brick = edges.map(edge => {
+  const bricks = edges.map(edge => {
     const { node } = edge
     const { id, frontmatter: { tags, type } } = node
-    const EntryType = type === 'blog' ? Blog : Tip
+    const Brick = type === 'blog' ? Blog : Tip
 
     return (
-      <EntryType 
+      <Brick
         key={id}
         node={node}>
         <Tags items={tags} />
-      </EntryType>
+      </Brick>
     )
   })
 
   return (
     <div className="flex flex-wrap justify-center">
-      {brick}
+      {bricks}
     </div>
   )
 }

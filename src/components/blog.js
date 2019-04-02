@@ -8,17 +8,21 @@ const Blog = ({ node, children }) => {
 
   return (
     <Card>
-      <ImagePlaceholder />
-
-      <h2>
-        <Link to={path}>{title}</Link>
-      </h2>
-
-      <div className="content">
-        <p>{excerpt}</p>
+      <div className="card-head">
+        <ImagePlaceholder />
       </div>
-      
-      {children}
+
+      <div className="card-content">
+        <h2>
+          <Link to={path}>{title}</Link>
+        </h2>
+
+        <div className="content">
+          <p>{excerpt}</p>
+        </div>
+
+        {children}
+      </div>
     </Card>
   )
 }
