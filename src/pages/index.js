@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import Wall from '../components/wall'
 // import Bricks from '../components/bricks'
 import Layout from '../components/layout'
-import Featured from '../components/featured'
+// import Featured from '../components/featured'
 
 const IndexPage = (props) => {
   const { data: { allMarkdownRemark: { edges } } } = props

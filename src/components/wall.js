@@ -6,32 +6,30 @@ const Wall = ({ edges }) => {
   let wall = []
   const isPreRendered = typeof window === 'undefined'
 
-  if (isPreRendered) {
-    wall = edges.map(({ node}) => (<Brick node={node} key={node.id} />))
-  } else {
-    let column = 0
-    let limit = useColumnLimit()
-    let rows = Array.from({length: limit}, () => [])
+  console.log(isPreRendered)
 
-    edges.forEach(({ node }) => {
-      rows[column].push(node)
-      column++
-      if (column === limit) column = 0
-    })
+  let column = 0
+  let limit = useColumnLimit()
+  let rows = Array.from({length: limit}, () => [])
 
-    wall = rows.map((columns, index) => {
-      const bricks = columns.map(node => (<Brick node={node} key={node.id} />))
+  edges.forEach(({ node }) => {
+    rows[column].push(node)
+    column++
+    if (column === limit) column = 0
+  })
 
-      return (
-        <div className={`wall-column w-${limit > 1 ? `1/${limit}` : 'full'}`} key={index}>
-          {bricks}
-        </div>
-      )
-    })
-  }
+  wall = rows.map((columns, index) => {
+    const bricks = columns.map(node => (<Brick node={node} key={node.id} />))
+
+    return (
+      <div className={`col is-${limit} ${isPreRendered ? 'is-prerendered' : ''}`} key={index}>
+        {bricks}
+      </div>
+    )
+  })
 
   return (
-    <div className={`wall ${isPreRendered ? 'is-prerendered' : ''}`}>
+    <div className="wall">
       {wall}
     </div>
   )
